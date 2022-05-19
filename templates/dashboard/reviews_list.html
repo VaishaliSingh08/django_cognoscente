@@ -1,0 +1,93 @@
+{% load static %}
+{% include 'dashboard/header.html' %}
+<div class="breadcome-area">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcome-list">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <div class="breadcomb-wp">
+                                <div class="breadcomb-icon">
+                                    <i class="icon nalika-home"></i>
+                                </div>
+                                <div class="breadcomb-ctn">
+                                    <h2>Reviews List</h2>
+                                    <p>Welcome <span class="bread-ntd">{{ username }}</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <div class="breadcomb-report">
+                                <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn">
+                                    <i class="icon nalika-download"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="product-status mg-b-30">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="product-status-wrap">
+                    <h4>Reviews List</h4>
+                    <div class="add-product">
+                        <a href="{% url 'add_review' %}">Add Skill</a>
+                    </div>
+                    <table>
+                        <tr>
+                            <td>S. No.</td>
+                            <td>Name</td>
+                            <td>Image</td>
+                            <td>Actions</td>
+                        </tr>
+
+                        {% for i in reviews %}
+
+                            <tr class="clickable"
+               onclick="window.location='{% url 'edit_reviews'  i.r_id_pk %}'">
+
+                                <td class="">
+                                   {{forloop.counter}}
+                                </td>
+                                <td>{{ i.name }}</td>
+                                <td><img src="{{ i.image }}"></td>
+<td>  <a href="{% url 'delete_review' i.r_id_pk %}" ><button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
+</td>
+                            </tr>
+
+                        {% endfor %}
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer-copyright-area">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="footer-copy-right">
+                    <p>Copyright © 2018 <a href="#">PEP OFFICE</a> All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script>
+    jQuery(document).ready(function($) {
+    $(".clickable-row").click(function() {
+        window.location = $(this).data("href");
+    });
+});
+</script>
+
+{% include 'dashboard/footer.html' %}

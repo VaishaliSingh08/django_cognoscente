@@ -1,0 +1,170 @@
+{% load static %}
+{% include 'home/header.html' %}
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+<a class="navbar-brand" href="{% url 'home' %}">Cognoscentesoft</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+        </button>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item {% if active == "home" %}active{% endif %}"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+<li class="nav-item {% if active == "about" %}active{% endif %}"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+<li class="nav-item {% if active == "services" %}active{% endif %}"><a href="{% url 'services' %}" class="nav-link">Services</a></li>
+<li class="nav-item {% if active == "projects" %}active{% endif %}"><a href="{% url 'projects' %}" class="nav-link">Projects</a></li>
+<li class="nav-item {% if active == "blog" %}active{% endif %}"><a href="{% url 'blog' %}" class="nav-link">Blog</a></li>
+<li class="nav-item {% if active == "contact" %}active{% endif %}"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="hero-wrap hero-wrap-2" style="background-image:url(/static/images/xbg_4.jpg.pagespeed.ic.jsNSabbn7j.jpg)">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-end">
+            <div class="col-md-9 ftco-animate pb-5">
+                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span>
+                    <span class="mr-2"><a href="index.html">Blog <i class="fa fa-chevron-right"></i></a></span> <span>Blog Single <i
+                            class="fa fa-chevron-right"></i></span></p>
+                <h1 class="mb-0 bread">Blog Single</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 ftco-animate">
+                <h2 class="mb-3">{{ blog_des.b_heading_1}}</h2>
+                <p>{{ blog_des.b_desc_1 }}</p>
+                <p>
+                    <img src="{{ blog_des.b_image_1 }}" alt="" class="img-fluid">
+                </p>
+                  <p>{{ blog_des.b_desc_2 }}</p>
+
+            {% if blog_des.b_heading_2  or blog_des.b_desc_3 or blog_des.b_desc_4 or blog_des.b_image_2 %}
+                <h2 class="mb-3">{{ blog_des.b_heading_2}}</h2>
+                <p>{{ blog_des.b_desc_3 }}</p>
+                <p>
+                    <img src="{{ blog_des.b_image_2 }}" alt="" class="img-fluid">
+                </p>
+                  <p>{{ blog_des.b_desc_4 }}</p>
+{% endif %}
+        {% if blog_des.b_heading_3 or blog_des.b_desc_5 or blog_des.b_desc_6 or blog_des.b_image_3 %}
+                <h2 class="mb-3">{{ blog_des.b_heading_3 }}</h2>
+                <p>{{ blog_des.b_desc_5 }}</p>
+                <p>
+                    <img src="{{ blog_des.b_image_3 }}" alt="" class="img-fluid">
+                </p>
+                  <p>{{ blog_des.b_desc_6 }}</p>
+{% endif %}
+
+             {% if blog_des.b_heading_4 or blog_des.b_desc_7 or blog_des.b_desc_8 or blog_des.b_image_4 %}
+                <h2 class="mb-3">{{ blog_des.b_heading_4 }}</h2>
+                <p>{{ blog_des.b_desc_7 }}</p>
+                <p>
+                    <img src="{{ blog_des.b_image_4 }}" alt="" class="img-fluid">
+                </p>
+                  <p>{{ blog_des.b_desc_8 }}</p>
+{% endif %}
+ {% if blog_des.b_heading_5 or blog_des.b_desc_9 or blog_des.b_desc_10 or blog_des.b_image_5 %}
+                <h2 class="mb-3">{{ blog_des.b_heading_5 }}</h2>
+                <p>{{ blog_des.b_desc_9 }}</p>
+                <p>
+                    <img src="{{ blog_des.b_image_5 }}" alt="" class="img-fluid">
+                </p>
+                  <p>{{ blog_des.b_desc_10 }}</p>
+{% endif %}
+ {% if blog_des.b_heading_6 or blog_des.b_desc_11 or blog_des.b_desc_12 or blog_des.b_image_6 %}
+                <h2 class="mb-3">{{ blog_des.b_heading_6 }}</h2>
+                <p>{{ blog_des.b_desc_11 }}</p>
+                <p>
+                    <img src="{{ blog_des.b_image_6 }}" alt="" class="img-fluid">
+                </p>
+                  <p>{{ blog_des.b_desc_12 }}</p>
+{% endif %}
+             {% if blog_des.b_heading_7 or blog_des.b_desc_13 or blog_des.b_desc_14 or blog_des.b_image_7 %}
+                <h2 class="mb-3">{{ blog_des.b_heading_7 }}</h2>
+                <p>{{ blog_des.b_desc_13 }}</p>
+                <p>
+                    <img src="{{ blog_des.b_image_7 }}" alt="" class="img-fluid">
+                </p>
+                  <p>{{ blog_des.b_desc_14 }}</p>
+{% endif %}
+   {% if blog_des.b_heading_8 or blog_des.b_desc_15 or blog_des.b_desc_16 or blog_des.b_image_8 %}
+                <h2 class="mb-3">{{ blog_des.b_heading_8 }}</h2>
+                <p>{{ blog_des.b_desc_15 }}</p>
+                <p>
+                    <img src="{{ blog_des.b_image_8 }}" alt="" class="img-fluid">
+                </p>
+                  <p>{{ blog_des.b_desc_16 }}</p>
+{% endif %}
+   {% if blog_des.b_heading_9 or blog_des.b_desc_17 or blog_des.b_desc_18 or blog_des.b_image_9 %}
+                <h2 class="mb-3">{{ blog_des.b_heading_9 }}</h2>
+                <p>{{ blog_des.b_desc_17 }}</p>
+                <p>
+                    <img src="{{ blog_des.b_image_9 }}" alt="" class="img-fluid">
+                </p>
+                  <p>{{ blog_des.b_desc_18 }}</p>
+{% endif %}
+   {% if blog_des.b_heading_10 or blog_des.b_desc_19 or blog_des.b_desc_20 or blog_des.b_image_10 %}
+                <h2 class="mb-3">{{ blog_des.b_heading_10 }}</h2>
+                <p>{{ blog_des.b_desc_19 }}</p>
+                <p>
+                    <img src="{{ blog_des.b_image_10}}" alt="" class="img-fluid">
+                </p>
+                  <p>{{ blog_des.b_desc_20 }}</p>
+            {% endif %}
+            </div>
+            <div class="col-lg-4 sidebar ftco-animate pl-md-5 mt-5 mt-md-5">
+
+                <div class="sidebar-box ftco-animate">
+                    <h3>Recent Blogs</h3>
+
+                       {% for j in blogs|slice:":3" %}
+                    <div class="block-21 mb-4 d-flex justify-content-between">
+                        <a class="blog-img"
+                           style="background-image:url({{ j.b_image_1 }})"></a>
+                        <div class="text pl-3">
+                            <h3 class="heading"><a href="#">{{ j.b_name }}</a></h3>
+
+                        </div>
+                    </div>
+                    {% endfor %}
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-intro ftco-section ftco-no-pb">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <div class="img" style="background-image:url(/static/images/newsletter.jpg)">
+                    <div class="overlay"></div>
+                    <h2>Join Us Newsletter</h2>
+                    <p>Sign Up to our Newsletter and get our latest news update</p>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <form action="#" class="subscribe-form">
+                                <div class="form-group d-flex">
+                                    <input type="text" class="form-control" placeholder="Enter email address">
+                                    <input type="submit" value="Subscribe" class="submit px-3">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% include 'home/footer.html' %}

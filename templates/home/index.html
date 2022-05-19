@@ -1,0 +1,474 @@
+{% load static %}
+{% include 'home/header.html' %}
+
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+<div class="container">
+<a class="navbar-brand" href="{% url 'home' %}">Cognoscentesoft</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+<span class="oi oi-menu"></span> Menu
+</button>
+<div class="collapse navbar-collapse" id="ftco-nav">
+<ul class="navbar-nav ml-auto">
+
+
+<li class="nav-item {% if active == "home" %}active{% endif %}"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+<li class="nav-item {% if active == "about" %}active{% endif %}"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+<li class="nav-item {% if active == "services" %}active{% endif %}"><a href="{% url 'services' %}" class="nav-link">Services</a></li>
+<li class="nav-item {% if active == "projects" %}active{% endif %}"><a href="{% url 'projects' %}" class="nav-link">Projects</a></li>
+<li class="nav-item {% if active == "blog" %}active{% endif %}"><a href="{% url 'blog' %}" class="nav-link">Blog</a></li>
+<li class="nav-item {% if active == "contact" %}active{% endif %}"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="hero-wrap">
+    <div class="home-slider owl-carousel js-fullheight">
+        <div class="slider-item js-fullheight" style="background-image:url({% static 'images/office.jpg' %});">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row d-flex no-gutters slider-text js-fullheight align-items-center align-items-stretch">
+                    <div class="col-md-7 ftco-animate d-flex align-items-center">
+                        <div class="text w-100 mt-5">
+                            <span class="subheading"><h2>Welcome to Cognoscentesoft</h2></span>
+                            <h1>Digital Innovation Company that Creates Solution</h1>
+                            <p class="mb-4">Cognoscentesoft enroll a team of creative, innovative and technically sound individuals who can help in the digital transformation of your business. Our aim is to address the diverse business challenges faced by our clients.</p>
+                            <p><a href="{% url 'contact' %}" class="btn btn-primary">Let's Talk</a>
+                                <a href="{% url 'services' %}" class="btn btn-white">Our services</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-item js-fullheight" style="background-image:url({% static 'images/slider1.jpg' %});">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row d-flex no-gutters slider-text js-fullheight align-items-center align-items-stretch">
+                    <div class="col-md-7 ftco-animate d-flex align-items-center">
+                        <div class="text w-100 mt-5">
+                            <span class="subheading"><h2>Creative Portfolio</h2></span>
+                            <h1>Professional &amp; Creative Web Solution</h1>
+                            <p class="mb-4"> Cognoscentesoft enroll a team of creative, innovative and technically sound individuals who can help in the digital transformation of your business. Our aim is to address the diverse business challenges faced by our clients.</p>
+                           <p><a href="{% url 'contact' %}" class="btn btn-primary">Let's Talk</a>
+                                <a href="{% url 'services' %}" class="btn btn-white">Our services</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-section ftco-services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 d-flex align-self-stretch ftco-animate">
+                <div class="pb-4 heading-section heading-section-white">
+                    <h2 class="mb-3">We Shape The <br> Perfect Solutions</h2>
+                    <p class="mb-4">To continuously innovate our solutions and services to keep adding value to our clients. We endeavor to grow our clients’ business by enabling informed decision making through technological and management interventions.</p>
+                </div>
+            </div>
+            {% for i in services %}
+           <a href="/{{ i.ser_url }}"><div class="col-md-3 d-flex align-self-stretch ftco-animate">
+                <div class="services">
+                    <div class="d-flex justify-content-end">
+                        <div class="icon d-flex">
+                            <img src="{{ i.ser_image }}">
+                        </div>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="heading mb-3">{{ i.ser_name }}</h3>
+                    </div></a>
+                    <a href="/{{ i.ser_url }}" class="btn-custom d-flex align-items-center justify-content-center"><span
+                            class="fa fa-chevron-right"></span></a>
+                </div>
+            </div>
+{% endfor %}
+
+        </div>
+    </div>
+</section>
+<section class="ftco-section ftco-about ftco-no-pt ftco-no-pb img">
+    <div class="container">
+        <div class="row d-flex">
+            <div class="col-md-12 about-intro">
+                <div class="row d-flex">
+                    <div class="col-md-6 d-flex align-items-stretch">
+                        <div class="img d-flex align-items-center align-self-stretch justify-content-center"
+                             style="background-image:url({% static 'images/discuss.jpg' %});">
+                        </div>
+                    </div>
+                    <div class="col-md-6 pl-md-5 py-5">
+                        <div class="row justify-content-start pb-3 pt-md-5">
+                            <div class="col-md-12 heading-section ftco-animate">
+                                <span class="subheading">Welcome to Cognoscentesoft</span>
+                                <h2 class="mb-4">Highest <br>Creative Standards</h2>
+                                <p>100% Quality standards and Client satisfaction are what we assure and ensure when we deliver. We strive to improve our people and processes continuously.Our focus is not just to deliver, but to innovate, implement new ideas and technologies and help you succeed in growing your business.</p>
+                                <div class="year-stablish d-flex">
+                                    <div class="icon2 d-flex align-items-center justify-content-center"><span
+                                            class="flaticon-light-bulb"></span></div>
+                                    <div class="text pl-4">
+{#                                        <strong class="number" data-number="1">0</strong>#}
+                                        <strong class="number">1+</strong>
+                                        <span>Year Of<br> Experience and counting</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-section ftco-counter img" id="section-counter"
+         style="background-image: url({% static 'images/bg_4.jpg' %});">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 d-flex counter-wrap ftco-animate">
+                <div class="block-18 d-flex align-items-center">
+                    <div class="icon d-flex align-items-center justify-content-center"><span
+                            class="flaticon-file"></span></div>
+                    <div class="text pl-3">
+                        <strong class="number" data-number="20">0</strong>
+                        <span>Project Completed</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 d-flex counter-wrap ftco-animate">
+                <div class="block-18 d-flex align-items-center">
+                    <div class="icon d-flex align-items-center justify-content-center"><span
+                            class="flaticon-waiter"></span></div>
+                    <div class="text pl-3">
+                        <strong class="number" data-number="15">0</strong>
+                        <span>Our Staff</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 d-flex counter-wrap ftco-animate">
+                <div class="block-18 d-flex align-items-center">
+                    <div class="icon d-flex align-items-center justify-content-center"><span
+                            class="flaticon-customer-service"></span></div>
+                    <div class="text pl-3">
+                        <strong class="number" data-number="20">0</strong>
+                        <span>Services Provide</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 d-flex counter-wrap ftco-animate">
+                <div class="block-18 d-flex align-items-center">
+                    <div class="icon d-flex align-items-center justify-content-center"><span
+                            class="flaticon-good-review"></span></div>
+                    <div class="text pl-3">
+                        <strong class="number" data-number="20">0</strong>
+                        <span>Happy Customers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-section ftco-faqs services-section bg-light">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row d-flex">
+            <div class="col-md-6 mb-5 md-md-0 order-md-last">
+                <div class="img w-100 mb-4" style="background-image: url({% static 'images/bg_2.jpg' %});"></div>
+                <h2 class="heading-section2 mb-5">{{ faqs.0.faq_heading }}</h2>
+                <div class="row">
+                    <div class="col-md-12 animate-box">
+                        <div class="progress-wrap ftco-animate">
+                            <h3>{{ faqs.0.p_1_name }}</h3>
+                            <div class="progress">
+                                <div class="progress-bar color-1" role="progressbar" aria-valuenow="90"
+                                     aria-valuemin="0" aria-valuemax="100" style="width:{{ faqs.0.p_1_value }}%">
+                                    <span style="color: slategray">{{ faqs.0.p_1_value }}%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 animate-box">
+                        <div class="progress-wrap ftco-animate">
+                            <h3>{{ faqs.0.p_2_name }}</h3>
+                            <div class="progress">
+                                <div class="progress-bar color-2" role="progressbar" aria-valuenow="85"
+                                     aria-valuemin="0" aria-valuemax="100" style="width:{{ faqs.0.p_2_value }}%">
+                                    <span style="color: slategray">{{ faqs.0.p_2_value }}%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 animate-box">
+                        <div class="progress-wrap ftco-animate">
+                            <h3>{{ faqs.0.p_3_name }}</h3>
+                            <div class="progress">
+                                <div class="progress-bar color-3" role="progressbar" aria-valuenow="95"
+                                     aria-valuemin="0" aria-valuemax="100" style="width:{{ faqs.0.p_3_value }}%">
+                                    <span style="color: slategray">{{ faqs.0.p_3_value }}%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 animate-box">
+                        <div class="progress-wrap ftco-animate">
+                            <h3>{{ faqs.0.p_4_name }}</h3>
+                            <div class="progress">
+                                <div class="progress-bar color-3" role="progressbar" aria-valuenow="90"
+                                     aria-valuemin="0" aria-valuemax="100" style="width:{{ faqs.0.p_4_value }}%">
+                                    <span style="color: slategray">{{ faqs.0.p_4_value }}%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-12 animate-box">
+                        <div class="progress-wrap ftco-animate">
+                            <h3>{{ faqs.0.p_5_name }}</h3>
+                            <div class="progress">
+                                <div class="progress-bar color-3" role="progressbar" aria-valuenow="90"
+                                     aria-valuemin="0" aria-valuemax="100" style="width:{{ faqs.0.p_5_value }}%">
+                                    <span style="color: slategray">{{ faqs.0.p_5_value }}%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 heading-section pr-md-5 ftco-animate d-flex align-items-center">
+                <div class="w-100 mb-4 mb-md-0">
+                    <span class="subheading" style="color: slategray">Frequently Ask Question</span>
+                    <h2 class="mb-5">Frequently <br>Ask Question</h2>
+                    <div id="accordion" class="myaccordion w-100" aria-multiselectable="true">
+                        <div class="card">
+                            <div class="card-header p-0" id="headingOne">
+                                <h2 class="mb-0">
+                                    <button href="#collapseOne"
+                                            class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link"
+                                            data-parent="#accordion" data-toggle="collapse" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                        <p class="mb-0">{{ faqs.0.faq_one }}</p>
+                                        <i class="fa" aria-hidden="true"></i>
+                                    </button>
+                                </h2>
+                            </div>
+                            <div class="collapse show" id="collapseOne" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="card-body py-3 px-0">
+
+                                        <p>{{ faqs.0.faq_ans_1 }}</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header p-0" id="headingTwo" role="tab">
+                                <h2 class="mb-0">
+                                    <button href="#collapseTwo"
+                                            class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link"
+                                            data-parent="#accordion" data-toggle="collapse" aria-expanded="false"
+                                            aria-controls="collapseTwo">
+                                        <p class="mb-0">{{ faqs.0.faq_two }}</p>
+                                        <i class="fa" aria-hidden="true"></i>
+                                    </button>
+                                </h2>
+                            </div>
+                            <div class="collapse" id="collapseTwo" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="card-body py-3 px-0">
+                                   <p>{{ faqs.0.faq_ans_2 }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header p-0" id="headingThree" role="tab">
+                                <h2 class="mb-0">
+                                    <button href="#collapseThree"
+                                            class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link"
+                                            data-parent="#accordion" data-toggle="collapse" aria-expanded="false"
+                                            aria-controls="collapseThree">
+                                        <p class="mb-0">{{ faqs.0.faq_three }}</p>
+                                        <i class="fa" aria-hidden="true"></i>
+                                    </button>
+                                </h2>
+                            </div>
+                            <div class="collapse" id="collapseThree" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="card-body py-3 px-0">
+                                   <p>{{ faqs.0.faq_ans_3 }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header p-0" id="headingFour" role="tab">
+                                <h2 class="mb-0">
+                                    <button href="#collapseFour"
+                                            class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link"
+                                            data-parent="#accordion" data-toggle="collapse" aria-expanded="false"
+                                            aria-controls="collapseFour">
+                                        <p class="mb-0">{{ faqs.0.faq_four }}</p>
+                                        <i class="fa" aria-hidden="true"></i>
+                                    </button>
+                                </h2>
+                            </div>
+                            <div class="collapse" id="collapseFour" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="card-body py-3 px-0">
+                                    <p>{{ faqs.0.faq_ans_4 }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-section">
+    <div class="container">
+        <div class="row no-gutters pb-5 justify-content-between">
+            <div class="col-md-7 col-lg-6 heading-section ftco-animate">
+                <span class="subheading">The Technologies, we work in</span>
+                <h2 class="mb-4">TOOLS <br>& Technologies</h2>
+            </div>
+
+        </div>
+    </div>
+    <div class="container container-2">
+           <div class="carousel-testimony owl-carousel">
+             {% for i in skills %}
+
+            <div class="col-md-4 col-lg  ftco-animate d-flex">
+                <div class="staff">
+                    <div class="img-wrap d-flex align-items-stretch">
+                        <div class="img d-flex align-items-center"
+                             style="background-image: url('{{ i.skill_image }}')">
+                            <div class="text w-100 pt-3 px-3 pb-4 text-center">
+                                <h3>{{ i.skill_name }}</h3>
+                                <span class="position"></span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+<section class="ftco-section ftco-portfolio bg-light">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row justify-content-between pb-5">
+            <div class="col-md-6 col-lg-6 heading-section heading-section-white ftco-animate">
+                <span class="subheading">Recent Portfolio</span>
+                <h2 class="mb-4">We Have Done <br>Many Latest Projects</h2>
+            </div>
+            <div class="col-md-4 col-lg-3 d-flex align-items-center justify-content-end">
+                <a href="{% url 'projects' %}" class="btn-custom">View All Projects <span class="fa fa-chevron-right"></span></a>
+            </div>
+        </div>
+        <div class="row">
+           {% for j in projects|slice:":6" %}
+            <div class="col-md-4 ftco-animate">
+                <div class="project-wrap img d-flex align-items-end"
+                     style="background-image: url({{ j.p_img_1 }});">
+                    <div class="text">
+                        <span>{{ j.p_service }}</span>
+                        <h3><a href="{% url 'project_desc' j.p_id_pk %}">{{ j.p_name }}</a></h3>
+                        <a href="{% url 'project_desc' j.p_id_pk %}"
+                           class="icon d-flex align-items-center justify-content-center"><span
+                                class="fa fa-chevron-right"></span></a>
+                    </div>
+                </div>
+            </div>
+       {% endfor %}
+        </div>
+    </div>
+</section>
+
+{#Reviews#}
+
+<section class="ftco-section testimony-section ftco-no-pt bg-light">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row pb-4">
+            <div class="col-md-7 heading-section ftco-animate">
+                <span class="subheading">Testimonial</span>
+                <h2 class="mb-4">People Say <br>About Our Works</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid px-lg-5">
+        <div class="row ftco-animate">
+            <div class="col-md-12">
+                <div class="carousel-testimony owl-carousel">
+                    {% for i in reviews %}
+                    <div class="item">
+                        <div class="testimony-wrap py-4">
+                            <div class="text">
+                                <p class="mb-4">{{ i.review }}</p>
+                                <div class="d-flex align-items-center">
+                                    <div class="user-img"
+                                         style="background-image: url({{ i.image }})"></div>
+                                    <div class="pl-3">
+
+                                        <p class="name">{{ i.name }}</p>
+                                        <span class="position">{{ i.desg }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section ftco-no-pb">
+    <div class="container">
+        <div class="row justify-content-center pb-4">
+            <div class="col-md-12 heading-section text-center ftco-animate">
+                <span class="subheading">Our Blog</span>
+                <h2 class="mb-4">Recent Post</h2>
+            </div>
+        </div>
+        <div class="row d-flex">
+            {% for i in blogs|slice:":3" %}
+            <div class="col-md-4 ftco-animate">
+                <div class="blog-entry">
+                    <a href="{% url 'blog_desc' i.b_id_pk %}" class="block-20"
+                       style="background-image: url({{ i.b_image_1 }});">
+                    </a>
+                    <div class="text d-block text-center">
+                        <h3 class="heading"><a href="{% url 'blog_desc' i.b_id_pk %}">{{ i.b_name }}</a></h3>
+                        <p>{{ i.b_desc_1|truncatewords:7 }}</p>
+                    </div>
+                </div>
+            </div>
+{% endfor %}
+        </div>
+    </div>
+</section>
+<section class="ftco-intro ftco-section ftco-no-pb">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <div class="img" style="background-image: url({% static 'images/newsletter.jpg' %});">
+                    <div class="overlay"></div>
+                    <h2 style="color: #0b0b0b">Join Us Newsletter</h2>
+                    <p style="color: #0b0b0b">Sign Up to our Newsletter and get our latest news update</p>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <form action="#" class="subscribe-form">
+                                <div class="form-group d-flex">
+                                    <input type="text" class="form-control" placeholder="Enter email address">
+                                    <input type="submit" value="Subscribe" class="submit px-3">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'home/footer.html' %}

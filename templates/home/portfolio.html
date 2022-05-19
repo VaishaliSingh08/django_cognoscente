@@ -1,0 +1,99 @@
+{% load static %}
+{% include 'home/header.html' %}
+
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+     <a class="navbar-brand" href="{% url 'home' %}">Cognoscentesoft</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+        </button>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+
+
+             <li class="nav-item {% if active == "home" %}active{% endif %}"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+<li class="nav-item {% if active == "about" %}active{% endif %}"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+<li class="nav-item {% if active == "services" %}active{% endif %}"><a href="{% url 'services' %}" class="nav-link">Services</a></li>
+<li class="nav-item {% if active == "projects" %}active{% endif %}"><a href="{% url 'projects' %}" class="nav-link">Projects</a></li>
+<li class="nav-item {% if active == "blog" %}active{% endif %}"><a href="{% url 'blog' %}" class="nav-link">Blog</a></li>
+<li class="nav-item {% if active == "contact" %}active{% endif %}"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<section class="hero-wrap hero-wrap-2" style="background-image:url({% static 'images/peojects_slider.jpg' %})">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-end">
+            <div class="col-md-9 ftco-animate pb-5">
+                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span>
+                    <span>Portfolio <i class="fa fa-chevron-right"></i></span></p>
+                <h1 class="mb-0 bread">Portfolio</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-section">
+    <div class="container">
+        <div class="row">
+            {% for i in projects %}
+            <div class="col-md-4 ftco-animate">
+                <div class="project-wrap img d-flex align-items-end"
+                     style="background-image: url({{ i.p_img_1 }});">
+                    <div class="text">
+                        <span>{{ i.p_service }}</span>
+                        <h3><a href="portfolio-single.html">{{ i.p_name }}</a></h3>
+                        <a href="{% url 'project_desc' i.p_id_pk %}"
+                           class="icon d-flex align-items-center justify-content-center"><span
+                                class="fa fa-chevron-right"></span></a>
+                    </div>
+                </div>
+            </div>
+           {% endfor %}
+        </div>
+{#        <div class="row mt-5">#}
+{#            <div class="col text-center">#}
+{#                <div class="block-27">#}
+{#                    <ul>#}
+{#                        <li><a href="#">&lt;</a></li>#}
+{#                        <li class="active"><span>1</span></li>#}
+{#                        <li><a href="#">2</a></li>#}
+{#                        <li><a href="#">3</a></li>#}
+{#                        <li><a href="#">4</a></li>#}
+{#                        <li><a href="#">5</a></li>#}
+{#                        <li><a href="#">&gt;</a></li>#}
+{#                    </ul>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+    </div>
+</section>
+<section class="ftco-intro ftco-section ftco-no-pb">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <div class="img" style="background-image:url(/static/images/newsletter.jpg)">
+                    <div class="overlay"></div>
+                    <h2>Join Us Newsletter</h2>
+                    <p>Sign Up to our Newsletter and get our latest news update</p>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <form action="#" class="subscribe-form">
+                                <div class="form-group d-flex">
+                                    <input type="text" class="form-control" placeholder="Enter email address">
+                                    <input type="submit" value="Subscribe" class="submit px-3">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% include 'home/footer.html' %}

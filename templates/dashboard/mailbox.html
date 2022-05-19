@@ -1,0 +1,94 @@
+{% include 'dashboard/header.html' %}
+
+
+        <div class="mailbox-area mg-tb-15">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-md-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="hpanel mg-b-15">
+                            <div class="panel-heading hbuilt mailbox-hd">
+                                <div class="text-center p-xs font-normal">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control input-sm" placeholder="Search email in your inbox..." style="
+    width: 1000px;
+"> <span class="input-group-btn">
+                                        <button type="button" class="btn btn-primary">Search
+											</button> </span></div>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-6 col-md-6 col-sm-6 col-xs-12 mg-b-15">
+                                        <div class="btn-group">
+                                            <button onClick="window.location.reload();" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i> Refresh</button>
+                                            <button class="btn btn-default btn-sm"><i class="fa fa-eye"></i></button>
+                                            <button class="btn btn-default btn-sm"><i class="fa fa-exclamation"></i></button>
+                                            <button class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                            <button class="btn btn-default btn-sm"><i class="fa fa-check"></i></button>
+                                            <button class="btn btn-default btn-sm"><i class="fa fa-tag"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-md-6 col-sm-6 col-xs-12 mailbox-pagination mg-b-15">
+                                        <div class="btn-group">
+                                            <button class="btn btn-default btn-sm"><i class="fa fa-arrow-left"></i></button>
+                                            <button class="btn btn-default btn-sm"><i class="fa fa-arrow-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-hover table-mailbox">
+                                        <tbody>
+                                        <tr>
+                                                <td>S. No.</td>
+                                                <td>Name</td>
+                                                <td>Subject</td>
+                                                <td>Message</td>
+                                                <td>Budget</td>
+                                                <td>Email</td>
+                                                <td>Contact Number</td>
+                                                <td>Attachments</td>
+                                                <td>Date</td>
+                                            </tr>
+                                        {% for i in query %}
+
+                                            <tr class="unread">
+                                                <td class="">
+                                                    <div class="checkbox checkbox-single checkbox-success">
+                                                        <input type="checkbox">
+                                                        <label></label>
+                                                    </div>
+                                                </td>
+                                                <td><a href="#">{{ i.name }}</a></td>
+                                              <td><a href="#">{{ i.message }}</a>
+                                                </td>
+
+                                                <td class="text-right mail-date">{{ i.date }}</td>
+                                            </tr>
+{% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <i class="fa fa-eye"> </i> 6 unread
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer-copy-right">
+                            <p>Copyright © 2018 <a href="https://colorlib.com/wp/templates/">Colorlib</a> All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ {% include 'dashboard/footer.html' %}
